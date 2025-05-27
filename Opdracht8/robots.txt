@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /fotos/
+Disallow: /akira_expanded/
+Disallow: /lemonmilk/
+Disallow: /louis_george_cafe/
+Disallow: /robots.txt/
+Allow: /keuzedeel_opdracht3.css/
+Allow: /keuzedeel_opdracht3_aboutpage.html/
+Allow: /keuzedeel_opdracht3_contact.html/
+Allow: /keuzedeel_opdracht3_projectspage.html/
+Sitemap: http://localhost/sitemap.xml

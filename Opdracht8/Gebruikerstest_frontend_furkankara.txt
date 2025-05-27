@@ -1,0 +1,7 @@
+Gebruikerstest
+
+Gebruiker is een klasgenoot
+
+Pluspunten: Fotos van homepage mooi, dat je de foto's kan klikken en navigeren, kennis en ervaring goed geschreven, programmeertalen goed geschreven, projecten via github weergeven
+
+Verbeterpunten: Contactformulier toevoegen om een mail te sturen (de code is aangepast)

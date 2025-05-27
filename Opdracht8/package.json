@@ -1,0 +1,13 @@
+{
+  "name": "codes_keuzedeelwebsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "build": "node-sass styles.scss keuzedeel_opdracht3.css --output-style compressed",
+  "watch": "node-sass --watch styles.scss keuzedeel_opdracht3.css --output-style nested"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
