@@ -79,6 +79,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 #headertekst-homepage {
@@ -94,16 +95,62 @@ img {
     margin-top: 1em;
 }
 
+/* afbeeldingen homepage */
 .main-homepage {
-    list-style-type: none;
-    display: flex;
-    gap: 8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     position: relative;
     bottom: 14rem;
-    margin-left: 7.1vw;
-    margin-right: 7.1vw;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 2rem;
+    padding: 0;
+    list-style-type: none;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-homepage section {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 450px;
+}
+
+.main-homepage section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.main-homepage section a {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    font-family: 'lemonmilkregular', sans-serif;
+}
+
+.main-homepage section img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.main-homepage section h2 {
+    margin: 0;
+    padding: 1.5rem;
+    font-family: 'lemonmilkregular', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0 0 8px 8px;
 }
 
 .main-homepage li {
@@ -245,7 +292,23 @@ img {
     color: black;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+/* media queries */
+@media screen and (min-width: 1024px) {
+    .main-homepage {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    .main-homepage section {
+        height: 480px;
+    }
+    
+    .main-homepage section img {
+        height: 380px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
     .navbar-homepage,
     .navbar-homepage-about {
         padding: 5px;
@@ -270,13 +333,18 @@ img {
     }
     
     .main-homepage {
-        gap: 4rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
         bottom: 10rem;
+        margin: 0 2rem;
     }
     
-    .main-homepage li img {
-        width: 270px;
-        height: 350px;
+    .main-homepage section {
+        height: 420px;
+    }
+    
+    .main-homepage section img {
+        height: 320px;
     }
     
     .maintext-homepage {
@@ -327,15 +395,23 @@ img {
     }
     
     .main-homepage {
-        flex-direction: column;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         bottom: 5rem;
-        align-items: center;
+        margin: 0 1rem;
     }
     
-    .main-homepage li img {
-        width: 250px;
-        height: 320px;
+    .main-homepage section {
+        height: 380px;
+    }
+    
+    .main-homepage section img {
+        height: 280px;
+    }
+    
+    .main-homepage section h2 {
+        font-size: 1em;
+        padding: 1rem;
     }
     
     .maintext-homepage {
@@ -384,279 +460,270 @@ img {
     }
 }
 
-    .navbar-homepage {
-        position: relative;
-    }
+/* Navigation Styles */
+.navbar-homepage {
+    position: relative;
+}
 
-    .nav-toggle {
-        display: none;
-    }
+.nav-toggle {
+    display: none;
+}
 
-    .nav-toggle-label {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 1em;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
 
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: black;
-        height: 2px;
-        width: 2em;
-        border-radius: 2px;
-        position: relative;
-    }
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
 
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-        position: absolute;
-    }
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
 
-    .nav-toggle-label span::before {
-        bottom: 7px;
-    }
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
 
-    .nav-toggle-label span::after {
-        top: 7px;
-    }
+.nav-toggle-label span::after {
+    top: 7px;
+}
 
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #A1D4F0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #A1D4F0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
 
-    .nav-menu ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .nav-menu ul li {
-        margin: 10px 0;
-        list-style-type: none;
-    }
+.nav-menu ul li {
+    margin: 10px 0;
+    list-style-type: none;
+}
 
-    .nav-menu ul li a {
-        text-decoration: none;
-        color: black;
-        font-family: 'lemonmilkregular', sans-serif;
-    }
+.nav-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'lemonmilkregular', sans-serif;
+}
 
-    .nav-toggle:checked ~ .nav-menu {
-        max-height: 100vh;
-    }
+.nav-toggle:checked ~ .nav-menu {
+    max-height: 100vh;
+}
 
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
 
-    .navbar-homepage {
-        position: relative;
-    }
+.nav-toggle-label {
+    z-index: 2;
+    cursor: pointer;
+}
 
-    .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        position: relative;
-    }
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
 
-    .nav-toggle {
-        display: none;
-    }
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    transition: all 0.3s ease;
+}
 
-    .nav-toggle-label {
-        z-index: 2;
-        cursor: pointer;
-    }
+.nav-toggle-label span::before {
+    top: -7px;
+}
 
-    .nav-toggle-label span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: black;
-        position: relative;
-        transition: background-color 0.3s ease;
-    }
+.nav-toggle-label span::after {
+    bottom: -7px;
+}
 
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: black;
-        position: absolute;
-        transition: all 0.3s ease;
-    }
+.nav-toggle:checked + .nav-toggle-label span {
+    background-color: transparent;
+}
 
-    .nav-toggle-label span::before {
-        top: -7px;
-    }
+.nav-toggle:checked + .nav-toggle-label span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
 
-    .nav-toggle-label span::after {
-        bottom: -7px;
-    }
+.nav-toggle:checked + .nav-toggle-label span::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
 
-    .nav-toggle:checked + .nav-toggle-label span {
-        background-color: transparent;
-    }
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #A1D4F0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 1;
+}
 
-    .nav-toggle:checked + .nav-toggle-label span::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
+.nav-menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .nav-toggle:checked + .nav-toggle-label span::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
+.nav-menu ul li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
 
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #A1D4F0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        z-index: 1;
-    }
+.nav-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'lemonmilkregular', sans-serif;
+    display: block;
+    width: 100%;
+}
 
-    .nav-menu ul {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.nav-toggle:checked ~ .nav-menu {
+    max-height: 300px; 
+}
 
-    .nav-menu ul li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
+#github {
+    margin-right: 2em;
+    text-decoration: none;
+    color: black;
+}
 
-    .nav-menu ul li a {
-        text-decoration: none;
-        color: black;
-        font-family: 'lemonmilkregular', sans-serif;
-        display: block;
-        width: 100%;
-    }
+#logo a {
+    text-decoration: none;
+    color: black;
+}
 
-    .nav-toggle:checked ~ .nav-menu {
-        max-height: 300px; 
-    }
+.main-homepage a {
+    text-decoration: none;
+    color: black;
+    font-family: 'lemonmilkregular';
+    font-size: 0.8em;
+}
 
+/* formulier */
+#labelcontact {
+    font-family: 'lemonmilkregular';
+    font-size: 16px;
+    margin-left: 48px;
+    margin-top: 34px;
+}
 
-    #github {
-        margin-right: 2em;
-        text-decoration: none;
-        color: black;
-    }
-
-    #logo a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .main-homepage a {
-        text-decoration: none;
-        color: black;
-        font-family: 'lemonmilkregular';
-        font-size: 0.8em;
-    }
-
-    #labelcontact {
-        font-family: 'lemonmilkregular';
-        font-size: 16px;
-        margin-left: 48px;
-        margin-top: 34px;
-    }
-
-
-    #naamformulier {
-        margin-top: 32px;
-        margin-bottom: 16px;
-        font-family: 'lemonmilkregular';
-        font-size: 14px;
-    }
-
-    #inputnaam {
-        border-radius: 2px;
-        border: 1px solid black;
-        padding: 5px;
-        margin-left: 10px;
-    }
-
-    #labelnaam {
-        margin-left: 47px;
-    }
-
-    #labelemail {
-        margin-left: 47px;
-    }
-
-    #emailformulier {
+#naamformulier {
     margin-top: 32px;
     margin-bottom: 16px;
     font-family: 'lemonmilkregular';
     font-size: 14px;
-    }
+}
 
-    #inputemail {
+#inputnaam {
     border-radius: 2px;
     border: 1px solid black;
     padding: 5px;
     margin-left: 10px;
-    }
+}
 
-    #berichtformulier {
+#labelnaam {
+    margin-left: 47px;
+}
+
+#labelemail {
+    margin-left: 47px;
+}
+
+#emailformulier {
     margin-top: 32px;
     margin-bottom: 16px;
     font-family: 'lemonmilkregular';
     font-size: 14px;
-    }
+}
 
-    #labelmessage {
+#inputemail {
+    border-radius: 2px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#berichtformulier {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-family: 'lemonmilkregular';
+    font-size: 14px;
+}
+
+#labelmessage {
     margin-left: 47px;
     position: relative;
     bottom: 13px;
-    }
+}
 
-    #inputmessage {
+#inputmessage {
     border-radius: 2px;
     border: 1px solid black;
     padding: 5px;
     margin-left: 10px;
-    }
+}
 
-    #verzendenformulier {
+#verzendenformulier {
     margin-left: 45px;
     margin-top: 45px;
-    }
+}
 
-    #submitknop {
+#submitknop {
     font-family: 'louisgeorgecafe', sans-serif;
     background-color: #D9D9D9;
     border: none;
     padding: 11px;
     font-size: 15px;
     cursor: pointer;
-    }
+}
