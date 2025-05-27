@@ -1,8 +1,8 @@
 /* Homepagina */
 @font-face {
     font-family: 'lemonmilkregular';
-    src: url('../codes_keuzedeelwebsite/lemonmilk/LEMONMILK-Regular.otf') format('opentype'),
-    url('../codes_keuzedeelwebsite/lemonmilk/LEMONMILK-Regular.otf') format('otf');
+    src: url('../Opdracht8/lemonmilk/LEMONMILK-Regular.otf') format('opentype'),
+    url('../Opdracht8/lemonmilk/LEMONMILK-Regular.otf') format('otf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -10,8 +10,8 @@
 
 @font-face {
     font-family: 'louisgeorgecafe';
-    src: url('../codes_keuzedeelwebsite/louis_george_cafe/Louis\ George\ Cafe.ttf') format('TrueType'),
-    url('../codes_keuzedeelwebsite/louis_george_cafe/Louis\ George\ Cafe.ttf') format('ttf');
+    src: url('../Opdracht8/louis_george_cafe/Louis\ George\ Cafe.ttf') format('TrueType'),
+    url('../Opdracht8/louis_george_cafe/Louis\ George\ Cafe.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -19,8 +19,8 @@
 
 @font-face {
     font-family: 'akiraexpanded';
-    src: url('../codes_keuzedeelwebsite/akira_expanded/Akira\ Expanded\ Demo.otf') format('OpenType'),
-    url('../codes_keuzedeelwebsite/akira_expanded/Akira\ Expanded\ Demo.otf') format('otf');
+    src: url('../Opdracht8/akira_expanded/Akira\ Expanded\ Demo.otf') format('OpenType'),
+    url('../Opdracht8/akira_expanded/Akira\ Expanded\ Demo.otf') format('otf');
     font-weight: bolder;
     font-style: bolder;
     font-display: swap;
